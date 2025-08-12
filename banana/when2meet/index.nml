@@ -1,0 +1,78 @@
+<nml>
+<head>
+    <style>
+        #available {
+            display: flex;
+        }
+        #available > div {
+            flex-basis: 10ch;
+        }
+        #available .padded {
+            padding-left: 1ch;
+            padding-right: 1ch;
+        }
+        #available > div > div {
+            width: 100%;
+            text-align: center;
+        }
+        body {
+            padding-left: 2ch;
+            padding-top: 1ch;
+        }
+        #peopleavailcont {
+            position: absolute;
+            left: 60%;
+            top: 20%;
+            width: 40%;
+        }
+        #peopleavailcont > div {
+        }
+        #peopleavailcont > div > span {
+
+        }
+        #availsplit > div {
+            flex-basis: 50%;
+            text-align: center;
+        }
+        #availsplit {
+            display: flex;
+        }
+        #availsplit .header {
+            hl-underline: true;
+            hl-bold: true;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="header">
+        <h1> AVAILABILITY </h1>
+
+        <div>
+        0/<span class="count"> n </span> &sp;Available <span id="colors"> </span>&sp; <span class="count"> n </span>/<span class="count"> n </span> &sp;Available
+
+        </div>
+    </div>
+    <br>
+
+    <div id="available">
+
+    </div>
+
+    <div id="peopleavailcont">
+        <div id="availcount" style="hl-bold: true"> </div>
+        <div id="date">
+        </div>
+        <br>
+        <div id="availsplit">
+            <div id="peopleavail">
+            </div>
+            <div id="peopleunavail">
+            </div>
+        </div>
+    </div>
+    <script src="when2meet.banana"></script>
+    <script src="banana.helpers.qtoclose"></script>
+</body>
+</nml>
