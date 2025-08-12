@@ -1,14 +1,8 @@
 vim.keymap.set("n", "<leader>rl", function()
+    vim.cmd("Lazy reload banana.nvim")
     vim.cmd("Lazy reload when2meet.nvim")
 end, { desc = "Reload" })
-local link = "https://www.when2meet.com/?31518963-z2KUh"
-vim.keymap.set("n", "<leader>ru", function()
-    require("when2meet").curl(link, function() end)
-end, { desc = "Run" })
-vim.keymap.set("n", "<leader>ro", function()
-    vim.cmd("Lazy reload when2meet.nvim")
-    require("when2meet").curl(link, function() end)
-end, { desc = "Reload + Run" })
+
 vim.keymap.set("n", "<leader>rb", function()
     vim.cmd("BananaSo")
 end, { desc = "Run Nml" })

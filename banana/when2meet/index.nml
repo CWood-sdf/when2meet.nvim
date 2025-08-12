@@ -4,26 +4,50 @@
         #available {
             display: flex;
         }
+        .hash {
+            width: 9ch;
+            hl-sp: hl-extract(fg, Normal);
+        }
+        #available > div:not(:last-child):not(:first-child) .hash {
+            width: 10ch;
+        }
+        .underline {
+            hl-underline: true;
+        }
         #available > div {
+            flex-shrink: 0;
+            width: 10ch;
             flex-basis: 10ch;
         }
         #available .padded {
             padding-left: 1ch;
             padding-right: 1ch;
+            /* text-align: center; */
         }
-        #available > div > div {
-            width: 100%;
-            text-align: center;
-        }
+        /* #available > div > div { */
+        /*     width: 100%; */
+        /*     text-align: center; */
+        /* } */
         body {
             padding-left: 2ch;
             padding-top: 1ch;
         }
+        #help {
+            position: absolute;
+            left: 50%;
+            top: 1ch;
+        }
         #peopleavailcont {
             position: absolute;
-            left: 60%;
-            top: 20%;
-            width: 40%;
+            left: 65%;
+            top: 30%;
+            width: 35%;
+        }
+        #peoplelistcont {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            width: 15%;
         }
         #peopleavailcont > div {
         }
@@ -41,23 +65,59 @@
             hl-underline: true;
             hl-bold: true;
         }
+        .remap {
+            hl-bold: true;
+        }
+        .underline {
+            hl-underline: true;
+        }
+        #headercont {
+            display: flex;
+        }
+        #headercont > div {
+            flex-basis: 50%;
+        }
     </style>
 
 </head>
 <body>
-
-    <div id="header">
-        <h1> AVAILABILITY </h1>
-
+    <div id="headercont">
         <div>
-        0/<span class="count"> n </span> &sp;Available <span id="colors"> </span>&sp; <span class="count"> n </span>/<span class="count"> n </span> &sp;Available
+            <h1 id="title"></h1>
+            <br>
 
+            <div id="header">
+               <h1> AVAILABILITY </h1>
+
+                <div>
+                0/<span class="count"> n </span> &sp;Available <span id="colors"> </span>&sp; <span class="count"> n </span>/<span class="count"> n </span> &sp;Available
+
+                </div>
+            </div>
         </div>
+    </div>
+    <div id="help">
+        <h1> When2Meet.nvim </h1>
+        <div style="hl-link: Comment">Press <span class="remap">n</span> to switch between number and hashes</div>
+        <div style="hl-link: Comment">Press <span class="remap">c</span> to limit the results to be above a certain pct</div>
+        <div style="hl-link: Comment">Press <span class="remap">ctrl+r</span> to reload</div>
+        <div style="hl-link: Comment">Move the cursor over a hash to show availability</div>
+        <div style="hl-link: Comment">Press <span class="remap">Enter</span> while over a name to filter</div>
+        <div style="hl-link: Comment">Press <span class="remap">ctrl+f</span> to bulk filter by a pattern</div>
+        <div style="hl-link: Comment">Press <span class="remap">ctrl+e</span> to bulk exclude by a pattern</div>
+        <div style="hl-link: Comment">Press <span class="remap">ctrl+l</span> to undo all filters</div>
     </div>
     <br>
 
     <div id="available">
 
+    </div>
+
+    <div id="peoplelistcont">
+        <h1><span style="hl-underline: true">People</span></h1>
+        <div id="peoplelist">
+
+        </div>
     </div>
 
     <div id="peopleavailcont">
